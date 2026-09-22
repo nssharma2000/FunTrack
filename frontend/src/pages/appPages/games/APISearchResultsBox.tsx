@@ -26,11 +26,6 @@ import gamePlaceholderImage from "../../../images/gamePlaceholderImage.png"
      })
   {
 
-
-  const selectGame = () => {
-    
-  }
-
         if(areApiSearchGamesLoading)
         {
           return (

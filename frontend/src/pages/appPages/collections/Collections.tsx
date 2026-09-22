@@ -187,7 +187,7 @@ function Collections() {
     userGameSearchValueRef.current = searchQuery
 
 
-    userGameSearchTimeoutRef.current = setTimeout(() => {
+    userGameSearchTimeoutRef.current = window.setTimeout(() => {
       userGamesSearch(userGameSearchValueRef.current, 1)      
     },
     300)

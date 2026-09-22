@@ -148,7 +148,7 @@ function Games() {
     userGameSearchValueRef.current = searchQuery
 
 
-    userGameSearchTimeoutRef.current = setTimeout(() => {
+    userGameSearchTimeoutRef.current = window.setTimeout(() => {
       userGamesSearch(userGameSearchValueRef.current, 1)      
     },
     300)
@@ -297,7 +297,7 @@ function Games() {
       clearTimeout(apiSearchTimeoutRef.current)
     }
     
-    const timeout = setTimeout(() => {
+    const timeout = window.setTimeout(() => {
         if(!searchQuery.trim()) 
         {
           return
