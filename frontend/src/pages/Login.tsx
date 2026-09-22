@@ -1,13 +1,11 @@
 import { Helmet } from 'react-helmet'
 import Navbar from '../components/Navbar'
-import { useContext, useEffect, useState, type JSX } from 'react'
-import greenTick from "../images/tick-green-icon.svg"
-import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google'
+import { useContext, useEffect, useState } from 'react'
+import { GoogleLogin } from '@react-oauth/google'
 import { AuthContext } from '../context/AuthContext'
 import api from "../api/api"
 import { setAccessToken } from '../api/tokenStorage'
 import { useNavigate } from 'react-router'
-import Home from './Home'
 
 function Login() {
 

@@ -6,8 +6,6 @@ import Navbar from '../components/Navbar'
 
 function Home() {
 
-  const wasGamePlayedToday = false  
-
   
 
   return (

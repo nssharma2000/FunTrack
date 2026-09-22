@@ -1,5 +1,5 @@
-import { BadgePlus, CrossIcon, DeleteIcon, ExternalLink, LucideDelete, LucidePlus, Plus, PlusIcon, Search, Star, StepBack, StepBackIcon, Trash, X } from 'lucide-react'
-import { useContext, useEffect, useRef, useState, type InputEvent } from 'react'
+import { ExternalLink, Plus, Search, Star, Trash, X } from 'lucide-react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { type myGame, type fetchedGame, type userAndGame } from "../../types/games"
 import api from "../../../api/api"
@@ -553,7 +553,7 @@ function Games() {
                       ref={userGamePageScrollDivRef}
                       >
                         { new Array(userGameTotalPages).fill(null)
-                        .map((i, index) => 
+                        .map((_, index) => 
                           <button className={`${index + 1 === userGamePageNumber ? "bg-orange-500 dark:bg-blue-500 text-white" : "bg-gray-200"} px-3 py-1 rounded-md flex justify-center items-center font-medium shadow-xs/30`}
                           onClick={ () => navigateToUserGamePage(index + 1) }>
                             { index + 1 }
@@ -616,7 +616,7 @@ function Games() {
                       <h1 className="text-lg font-medium">Rate this game: </h1>
                       <div className="flex justify-center items-center gap-2" onMouseLeave={() => setCurrentStarIndex(0) }>
                       {
-                        new Array(5).fill(1).map((star, index) =>
+                        new Array(5).fill(1).map((_, index) =>
                         {
                           const isFilled = currentUserAndGame ? (index <= currentUserAndGame?.rating - 1) : null
                           const isHoveredOver = (index <= currentStarIndex - 1)

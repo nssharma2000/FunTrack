@@ -2,8 +2,6 @@ import api, { refreshAccessToken } from "../api/api";
 import { setAccessToken } from "../api/tokenStorage";
 import { createContext, useEffect, useState, type PropsWithChildren } from "react";
 
-const javaBackendUrl = import.meta.env.VITE_SPRING_BOOT_BACKEND_URL
-
 type AuthContextType = {
     loggedIn: boolean | null
     setLoggedIn: React.Dispatch<React.SetStateAction<boolean | null>>

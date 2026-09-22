@@ -2,17 +2,9 @@ package com.example.backend.controllers;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
-import org.springframework.data.domain.OffsetScrollPosition;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.ScrollPosition;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Window;
-import org.springframework.data.repository.query.Param;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,9 +27,6 @@ import com.example.backend.repositories.UserGameRepository;
 import com.example.backend.repositories.UserRepository;
 import com.example.backend.services.IGDBService;
 
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.validation.Valid;
-import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 
 

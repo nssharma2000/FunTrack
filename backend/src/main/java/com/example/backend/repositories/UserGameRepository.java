@@ -1,7 +1,5 @@
 package com.example.backend.repositories;
 
-import java.util.List;
-
 import org.springframework.data.domain.OffsetScrollPosition;
 import org.springframework.data.domain.Window;
 import org.springframework.data.jpa.repository.JpaRepository;

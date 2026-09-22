@@ -1,16 +1,13 @@
-import { ArrowBigRight, BadgePlus, CrossIcon, DeleteIcon, ExternalLink, LucideDelete, LucidePlus, Plus, PlusIcon, Search, Star, StepBack, StepBackIcon, Trash, X } from 'lucide-react'
-import { useContext, useEffect, useRef, useState, type InputEvent } from 'react'
+import { Search, Trash } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet'
-import { type fetchedGame, type myGame } from "../../types/games"
+import { type myGame } from "../../types/games"
 import { type collection } from '../../types/collections'
 import api from "../../../api/api"
-import { AuthContext } from '../../../context/AuthContext'
 import "../../../css/Games.css"
 import gamePlaceholderImage from "../../../images/gamePlaceholderImage.png"
-import APISearchResultBox from "../games/APISearchResultsBox"
-import DeleteUserGameDialog from '../games/DeleteUserGameDialog'
 import { toast, ToastContainer } from 'react-toastify'
-import { ThemeProvider, useTheme } from '../../../theme-provider'
+import { useTheme } from '../../../theme-provider'
 
 
 
@@ -544,7 +541,7 @@ function Collections() {
                       ref={userGamePageScrollDivRef}
                       >
                         { new Array(userGameTotalPages).fill(null)
-                        .map((i, index) => 
+                        .map((_, index) => 
                           <button className={`${index + 1 === userGamePageNumber ? "bg-orange-500 dark:bg-blue-500 text-white" : "bg-gray-200"} px-3 py-1 rounded-md flex justify-center items-center font-medium shadow-xs/30`}
                           onClick={ () => navigateToUserGamePage(index + 1) }>
                             { index + 1 }
@@ -578,7 +575,7 @@ function Collections() {
               {
                 selectedCollectionGames.length > 0 ?
 
-                selectedCollectionGames.map((game, index) => 
+                selectedCollectionGames.map((game) => 
                 <div className="w-[95%] rounded-lg flex justify-between items-center p-3 bg-gray-200">
                   <div className="text-center lg:p-1 w-15 h-15 xl:w-18 xl:h-18">
                     <img className="object-contain rounded-sm w-full h-full" src={game?.imageUrl ? game?.imageUrl.replace("t_thumb", "t_cover_small") : gamePlaceholderImage } />

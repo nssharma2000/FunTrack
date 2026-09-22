@@ -1,9 +1,3 @@
-import { useState, useRef, useEffect } from 'react'
-import LogoSmall from '../images/Logo_small.png'
-import { Moon, Sun, User } from 'lucide-react'
-import { useTheme } from "../theme-provider.tsx"
-import { Link, useNavigate } from 'react-router'
-
 
 function LoadingPage() {
     

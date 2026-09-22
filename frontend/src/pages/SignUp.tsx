@@ -1,8 +1,7 @@
 import { Helmet } from 'react-helmet'
 import Navbar from '../components/Navbar'
-import { useContext, useEffect, useState, type JSX } from 'react'
-import greenTick from "../images/tick-green-icon.svg"
-import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google'
+import { useContext, useEffect, useState } from 'react'
+import { GoogleLogin } from '@react-oauth/google'
 import { AuthContext } from '../context/AuthContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router'

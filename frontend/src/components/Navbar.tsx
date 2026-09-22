@@ -28,11 +28,6 @@ function Navbar() {
        logout = auth.logout
     }
 
-     
-    
-    
-
-    let hasProfilePic: boolean = false
 
     const menuRef = useRef<HTMLDivElement>(null)
 
