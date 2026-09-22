@@ -122,7 +122,7 @@ public class RefreshTokenService {
                         true
                 )
                 .sameSite(
-                        "Lax"
+                        "None"
                 )
                 .path(
                         "/"
