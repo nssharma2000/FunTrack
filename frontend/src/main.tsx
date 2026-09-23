@@ -38,6 +38,8 @@ const ProtectedRoutes = () => {
     return (Navigate({ to: "/login", replace: true }))
   }
 
+  return <Layout />
+
 }
 
 const routes = [
