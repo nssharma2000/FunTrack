@@ -25,7 +25,7 @@ const ProtectedRoutes = () => {
     return null
   }
 
-  const loggedIn = { auth }
+  const { loggedIn } = auth
   
   if(loggedIn === null)
   {
