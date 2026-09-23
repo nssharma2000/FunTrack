@@ -34,6 +34,8 @@ export default function AuthContextProvider({ children }: PropsWithChildren)
         {
           await logout()
         }
+
+        setLoggedIn(false)
       }
     }
 
