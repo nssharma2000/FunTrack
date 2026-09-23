@@ -35,7 +35,7 @@ const ProtectedRoutes = () => {
 
   if(!loggedIn)
   {
-    return (Navigate({ to: "/login", replace: true }))
+    return (<Navigate to={"/login"} replace />)
   }
 
   return <Layout />
