@@ -7,7 +7,7 @@ import Login from './pages/Login.tsx'
 import { ThemeProvider } from './theme-provider'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import AuthContextProvider, { AuthContext } from './context/AuthContext.tsx'
-import { createBrowserRouter, RouterProvider } from 'react-router'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router'
 import Layout from './pages/layout/Layout.tsx'
 import Games from './pages/appPages/games/Games.tsx'
 import LoadingPage from './components/LoadingPage.tsx'
@@ -22,18 +22,22 @@ const ProtectedRoutes = () => {
 
   if(!auth)
   {
-    return null
+    return (<LoadingPage />)
   }
 
   const { loggedIn } = auth
+
   
   if(loggedIn === null)
   {
     return (<LoadingPage />)
   }
 
-  return (loggedIn ? <Layout /> : <Login />)
-  
+  if(!loggedIn)
+  {
+    return (Navigate({ to: "/login", replace: true }))
+  }
+
 }
 
 const routes = [
