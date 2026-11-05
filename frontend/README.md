@@ -1,69 +1,141 @@
-# React + TypeScript + Vite
+# 🎮 FunTrack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**FunTrack** is a full-stack game tracking platform where users can build and manage their personal game collections, track gameplay progress, and keep their gaming activity organized in one place.
 
-Currently, two official plugins are available:
+The application uses a **React frontend** and **Spring Boot backend**, with **PostgreSQL** for persistent data storage and **JWT-based authentication** using secure HTTP-only cookies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+- **Link:** https://funtrack.vercel.app/
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🔐 **User Authentication**
+  - JWT-based authentication
+  - Access token + refresh token flow
+  - HTTP-only cookies for token storage
+  - Secure user-specific sessions
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- 🎮 **Game Collection**
+  - Add games to your personal collection
+  - Multiple users can own the same game
+  - Games are associated with the authenticated user
+  - View and manage your personal library
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- 🔎 **Game Search**
+  - Search games by name
+  - Paginated search results
+  - Efficient backend-driven pagination
+
+- 📊 **Gameplay Tracking**
+  - Track progress for games in your collection
+  - Store user-specific gameplay information
+
+- 👤 **User-specific Data**
+  - Each user's collection and gameplay activity is isolated from other users
+  - PostgreSQL relationships ensure games and user collections are correctly associated
+
+- 🌐 **Full-stack Architecture**
+  - React frontend
+  - Spring Boot REST API
+  - PostgreSQL database
+  - Deployed frontend and backend
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React
+- Vite
+- JavaScript
+- Tailwind CSS
+- Axios
+
+### Backend
+
+- Java
+- Spring Boot
+- Spring Security
+- Spring Data JPA
+- REST APIs
+- JWT
+
+### Database
+
+- PostgreSQL
+
+### Deployment
+
+- Vercel — Frontend
+- Render — Backend
+- Neon - PostgreSQL
+
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Java 25+
+- Node.js
+- npm
+- PostgreSQL
+- Git
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/nssharma2000/funtrack.git
+cd funtrack
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Configure the backend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Create/configure your Spring Boot environment with your PostgreSQL database credentials.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Example:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/funtrack
+spring.datasource.username=YOUR_USERNAME
+spring.datasource.password=YOUR_PASSWORD
 ```
+
+**Do not commit credentials or secrets to GitHub.**
+
+### 3. Start the backend
+
+```bash
+cd backend
+./mvnw spring-boot:run
+```
+
+On Windows:
+
+```bash
+mvnw spring-boot:run
+```
+
+The backend will start on the configured Spring Boot port.
+
+### 4. Start the frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The Vite development server will start locally.
+
+## 🌍 Deployment
+
+The FunTrack frontend is deployed using **Vercel**, while the Spring Boot backend is deployed using **Render**. The database is deployed using Neon (PostgreSQL).
+
+## 👨‍💻 Author
+
+**Naman Sharma**
+
