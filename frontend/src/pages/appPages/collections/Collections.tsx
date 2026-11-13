@@ -8,6 +8,8 @@ import "../../../css/Games.css"
 import gamePlaceholderImage from "../../../images/gamePlaceholderImage.png"
 import { toast, ToastContainer } from 'react-toastify'
 import { useTheme } from '../../../theme-provider'
+import { useContext } from 'react'
+import { AuthContext } from '../../../context/AuthContext'
 
 
 
@@ -33,6 +35,13 @@ function Collections() {
   const userGamePageScrollDivRef = useRef<HTMLDivElement | null>(null)
   const userGameSearchTimeoutRef = useRef<number | null>(null)
   const userGameSearchValueRef = useRef<string>("")
+
+  const auth = useContext(AuthContext)
+  
+    if(!auth)
+    {
+      throw new Error("Auth is not defined.")
+    }
 
 
   useEffect(() => {
