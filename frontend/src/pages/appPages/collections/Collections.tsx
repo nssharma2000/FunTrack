@@ -203,7 +203,7 @@ function Collections() {
         gameIds: [],
       }
 
-      const response = await api.post("/collections/create", newCollection)
+      const response = await api.post("/collections/create", newCollection, { withCredentials: true })
       console.log(response)
 
       await fetchCollections(null)
