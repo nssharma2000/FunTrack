@@ -8,8 +8,6 @@ import "../../../css/Games.css"
 import gamePlaceholderImage from "../../../images/gamePlaceholderImage.png"
 import { toast, ToastContainer } from 'react-toastify'
 import { useTheme } from '../../../theme-provider'
-import { useContext } from 'react'
-import { AuthContext } from '../../../context/AuthContext'
 
 
 
