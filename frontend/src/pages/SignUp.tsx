@@ -337,7 +337,8 @@ function SignUp() {
                     <br />
                   </div>
                   <div className="mx-auto w-full flex flex-col p-5 justify-center gap-6 items-center">
-                    <button type="submit" className="bg-linear-to-r rounded-md text-white text-2xl font-semibold cursor-pointer px-8 py-4 shadow-md/20 from-blue-500 bg-size-[200%_200%] hover:bg-position-[100%_100%] to-violet-600 transition-all duration-600">
+                    <button type="submit" className="bg-linear-to-r rounded-md text-white text-2xl font-semibold cursor-pointer px-8 py-4 shadow-md/20 from-blue-500 bg-size-[200%_200%] hover:bg-position-[100%_100%] to-violet-600 transition-all duration-600"
+                    onClick={register}>
                       Create account
                     </button>
                     <GoogleLogin
