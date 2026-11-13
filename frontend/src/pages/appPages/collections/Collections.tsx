@@ -36,13 +36,6 @@ function Collections() {
   const userGameSearchTimeoutRef = useRef<number | null>(null)
   const userGameSearchValueRef = useRef<string>("")
 
-  const auth = useContext(AuthContext)
-  
-    if(!auth)
-    {
-      throw new Error("Auth is not defined.")
-    }
-
 
   useEffect(() => {
     fetchCollections(null)
