@@ -36,7 +36,8 @@ function Collections() {
 
 
   useEffect(() => {
-    fetchCollections(null)
+    setTimeout(() => fetchCollections(null),
+    5000)
   }, [])
 
    useEffect(() => {

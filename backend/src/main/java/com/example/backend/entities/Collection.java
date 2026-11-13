@@ -32,7 +32,7 @@ public class Collection {
     private Long id;
 
     @Column(name = "name", nullable = false)
-    @ColumnDefault("Untitled collection")
+    @ColumnDefault("'Untitled collection'")
     private String name;
 
     @Column(name = "game_ids")
