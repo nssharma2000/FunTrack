@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import { useContext, useEffect, useState } from 'react'
 import { GoogleLogin } from '@react-oauth/google'
 import { AuthContext } from '../context/AuthContext'
-import axios from 'axios'
+import api from '../api/api'
 import { useNavigate } from 'react-router'
 import LoadingPage from '../components/LoadingPage'
 import type { CredentialResponse } from '@react-oauth/google'
@@ -68,7 +68,7 @@ function SignUp() {
     {
 
       const password = firstPassword
-      const response = await axios.post(
+      const response = await api.post(
         `${javaBackendUrl}/auth/register`,
 
         {
@@ -241,7 +241,7 @@ function SignUp() {
      try 
      {
 
-        const response = await axios.post(`${javaBackendUrl}/auth/google`,
+        const response = await api.post(`${javaBackendUrl}/auth/google`,
                         {
                             idToken:
                             credentialResponse.credential
